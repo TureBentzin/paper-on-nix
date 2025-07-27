@@ -12,9 +12,7 @@ lib.fetchers.withNormalizedHash
   }
   (
     {
-      slug,
       version,
-      loader,
       outputHash,
       outputHashAlgo,
     }:

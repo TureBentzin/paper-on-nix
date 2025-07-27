@@ -1,5 +1,5 @@
 {
-  description = "";
+  description = "PaperMC Servers as services";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
