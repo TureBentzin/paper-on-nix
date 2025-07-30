@@ -1,7 +1,7 @@
 {
   lib,
   stdenvNoCC,
-  curl
+  wget
 }:
 lib.fetchers.withNormalizedHash
   {
@@ -13,21 +13,25 @@ lib.fetchers.withNormalizedHash
   (
     {
       version,
+      build,
+      contact,
+      host,
       outputHash,
       outputHashAlgo,
     }:
     stdenvNoCC.mkDerivation {
-      name = "TODO.jar";
+      name = "paper-${version}-${build}.jar";
       inherit version;
 
       builder = ./fetchPaper.sh;
       nativeBuildInputs = [
-        curl
+        wget
       ];
 
       outputHashMode = "flat";
       inherit outputHash outputHashAlgo;
 
-      URL = "";
+      # Variables
+      inherit wget build contact host;
     }
   )
